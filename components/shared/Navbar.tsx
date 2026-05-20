@@ -39,10 +39,9 @@ export default function Navbar() {
   };
 
   const linkClass = (href: string) =>
-    `rounded-lg px-3 py-2 text-sm font-medium transition ${
-      pathname === href
-        ? "bg-[var(--primary-light)] text-[var(--primary)]"
-        : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+    `rounded-lg px-3 py-2 text-sm font-medium transition ${pathname === href
+      ? "bg-[var(--primary-light)] text-[var(--primary)]"
+      : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
     }`;
 
   const allLinks = user ? [...publicLinks, ...privateLinks] : publicLinks;
@@ -123,12 +122,23 @@ export default function Navbar() {
           )}
         </div>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="rounded-lg border border-slate-200 p-2 lg:hidden dark:border-slate-700"
-        >
-          {open ? <X /> : <Menu />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="rounded-lg border border-slate-200 p-2 text-slate-700 dark:border-slate-700 dark:text-white"
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+          )}
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="rounded-lg border border-slate-200 p-2 dark:border-slate-700"
+          >
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
       </nav>
 
       {open && (
