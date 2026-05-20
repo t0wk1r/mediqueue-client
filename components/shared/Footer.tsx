@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -13,10 +14,30 @@ export default function Footer() {
             A smart tutor booking platform for students and learning sessions.
           </p>
 
-          <div className="mt-4 flex gap-3 text-sm font-semibold text-[var(--primary)]">
-            <span>Facebook</span>
-            <span>LinkedIn</span>
-            <span>X</span>
+          <div className="mt-4 flex gap-3">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary-light)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
+            >
+              f
+            </a>
+
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary-light)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
+            >
+              in
+            </a>
+
+            <a
+              href="https://x.com"
+              target="_blank"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--primary-light)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
+            >
+              X
+            </a>
           </div>
         </div>
 
